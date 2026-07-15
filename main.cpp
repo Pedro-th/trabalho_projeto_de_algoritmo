@@ -4,7 +4,7 @@
 #include <algorithm>
 #include "mergeSort.h"
 #include "countingSort.h"
-/* #include "bubbleSort.h" */
+#include "bubbleSort.h"
 
 vector<int> lista;
 int continuar = 1;
