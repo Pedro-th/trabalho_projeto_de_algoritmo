@@ -20,16 +20,16 @@ void merge(vector <double> &vetor, int inicio, int fim, int meio, int &contador)
     vector <double> aux;
     int i = inicio;
     int j = meio + 1;
-    while (i <= meio && j <= fim) {
-        if (vetor[i] <= vetor[j]) {
+    while (i <= meio && j <= fim) { //dividi as duas partes lá encima e aqui divide o vetor pra juntar encima
+        contador++; //
+        if (vetor[i] <= vetor[j]) { // se o indice 0 do vetor a for maior que o indice 0 do vetor b, ele vai pro vetor c
             aux.push_back(vetor[i]);
             i++;
-            contador++;
-        } else {
-            aux.push_back(vetor[j]);
+        } else { // analogo ao que tá acima, ele pega o b e joga pro c
+            aux.push_back(vetor[j]); 
             j++;
-            contador++;
         }
+        contador++;
     }
 
     while (i <= meio){
@@ -42,8 +42,14 @@ void merge(vector <double> &vetor, int inicio, int fim, int meio, int &contador)
         j++;
         contador++;
     }
+    /*
+    esses dois whiles de cima tratam pro caso de se um dos vetores ainda estiverem com elementos
+    ele vai colocando eles no vetor c
+    por que eles já são maiores do que qualquer coisa que está lá
+    e eles só são usados se o while acima deles (da linha 23) acabar e ainda contiver elementos 
+    */
 
-    for (int p = 0; p < aux.size(); p++) {
+    for (int p = 0; p < aux.size(); p++) { // joga os elementos do vetor c pro vetor original 
         vetor[inicio + p] = aux[p];
         contador++;
     }
