@@ -3,4 +3,4 @@
 using namespace std;
 
 int maximo(vector <int> &vetor);
-void countingSort(vector <double> &vetor);
+void countingSort(vector <int> &vetor);
