@@ -2,7 +2,7 @@
 #include <vector>
 #include "mergeSort.h"
 
-void mergeSort(vector <double> &vetor, int inicio, int fim, int &contador) {
+void mergeSort(vector <int> &vetor, int inicio, int fim, int &contador) {
     int meio;
 
     if (inicio >= fim) return;
@@ -14,8 +14,8 @@ void mergeSort(vector <double> &vetor, int inicio, int fim, int &contador) {
     merge(vetor,inicio,meio,fim,contador); // chamada da função merge que vai organizar de modo crescente 
 }
 
-void merge(vector <double> &vetor, int inicio, int fim, int meio, int &contador) {
-    vector <double> aux;
+void merge(vector <int> &vetor, int inicio, int fim, int meio, int &contador) {
+    vector <int> aux;
     int i = inicio;
     int j = meio + 1;
     while (i <= meio && j <= fim) { //dividi as duas partes lá encima e aqui divide o vetor pra juntar encima
