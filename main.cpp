@@ -21,6 +21,9 @@ int comparacao = 0;
 int troca = 0;
 random_device rd;
 mt19937 aleatorio(rd());
+std::chrono::time_point<std::chrono::high_resolution_clock> t_inicio;
+std::chrono::time_point<std::chrono::high_resolution_clock> t_final;
+std::chrono::microseconds t_decorrido;
 
 using namespace std;
 
@@ -108,6 +111,7 @@ int main() {
                  << "> ";
             cin >> choice;
 
+            t_inicio = chrono::high_resolution_clock::now();
             switch (choice) {
                 case 1: 
                     bubbleSort(lista, comparacao, troca);
@@ -122,6 +126,8 @@ int main() {
                     cout << "Tente novamente.\n";
                     continue;
                 };
+            t_final = chrono::high_resolution_clock::now();
+            t_decorrido = chrono::duration_cast<std::chrono::microseconds>(t_final - t_inicio);
             break;
         };
 
@@ -136,6 +142,7 @@ int main() {
         };
         cout << "Quantidade de comparações: " << comparacao << "\n";
         cout << "Quantidade de trocas: " << troca << "\n";
+        cout << "Tempo de execução (μs): " << t_decorrido.count() << "\n";
 
 
 
