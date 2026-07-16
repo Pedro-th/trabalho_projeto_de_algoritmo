@@ -27,18 +27,15 @@ void merge(vector <int> &vetor, int inicio, int fim, int meio, int &contador) {
             aux.push_back(vetor[j]); 
             j++;
         }
-        contador++;
     }
 
     while (i <= meio){
         aux.push_back(vetor[i]);
         i++;
-        contador++;
     }
     while (j <= fim) {
         aux.push_back(vetor[j]);
         j++;
-        contador++;
     }
     /*
     esses dois whiles de cima tratam pro caso de se um dos vetores ainda estiverem com elementos
@@ -49,7 +46,6 @@ void merge(vector <int> &vetor, int inicio, int fim, int meio, int &contador) {
 
     for (int p = 0; p < aux.size(); p++) { // joga os elementos do vetor c pro vetor original 
         vetor[inicio + p] = aux[p];
-        contador++;
     }
 
 }
