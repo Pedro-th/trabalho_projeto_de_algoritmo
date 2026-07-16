@@ -11,7 +11,7 @@ void mergeSort(vector <int> &vetor, int inicio, int fim, int &contador) {
     
     mergeSort(vetor, inicio, meio,contador); //divisão da esquerda, representa o vetor do inicio até o meio
     mergeSort(vetor, meio + 1, fim, contador); //divisão da direita, representa o vetor do meio + 1 até o fim
-    merge(vetor,inicio,meio,fim,contador); // chamada da função merge que vai organizar de modo crescente 
+    merge(vetor, inicio, fim, meio, contador); // chamada da função merge que vai organizar de modo crescente 
 }
 
 void merge(vector <int> &vetor, int inicio, int fim, int meio, int &contador) {
