@@ -10,9 +10,7 @@ void mergeSort(vector <double> &vetor, int inicio, int fim, int &contador) {
     meio = inicio + (fim - inicio) / 2; // definição do meio
     
     mergeSort(vetor, inicio, meio,contador); //divisão da esquerda, representa o vetor do inicio até o meio
-    contador++;
     mergeSort(vetor, meio + 1, fim, contador); //divisão da direita, representa o vetor do meio + 1 até o fim
-    contador++; // tanto esse quanto o contador acima fazem a contagem de quebra do vetor
     merge(vetor,inicio,meio,fim,contador); // chamada da função merge que vai organizar de modo crescente 
 }
 
@@ -46,7 +44,7 @@ void merge(vector <double> &vetor, int inicio, int fim, int meio, int &contador)
     esses dois whiles de cima tratam pro caso de se um dos vetores ainda estiverem com elementos
     ele vai colocando eles no vetor c
     por que eles já são maiores do que qualquer coisa que está lá
-    e eles só são usados se o while acima deles (da linha 23) acabar e ainda contiver elementos 
+    e eles só são usados se o while acima deles (da linha 21) acabar e ainda contiver elementos 
     */
 
     for (int p = 0; p < aux.size(); p++) { // joga os elementos do vetor c pro vetor original 
