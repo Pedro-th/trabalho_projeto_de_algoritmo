@@ -2,6 +2,7 @@
 #include <vector>
 #include <cmath>
 #include <algorithm>
+#include <chrono>
 #include "mergeSort.h"
 #include "countingSort.h"
 #include "bubbleSort.h"
