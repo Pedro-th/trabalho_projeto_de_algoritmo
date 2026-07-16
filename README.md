@@ -1,2 +1,5 @@
 ﻿# trabalho_projeto_de_algoritmo
-o trabalho consiste em fazer um estudo sobre algoritmos de ordenação, o MergeSort já foi implementado
+o trabalho foi feito por:
+-Pedro Thiago Braga
+-Enzo Tomo Okamoto
+-Yuri Palheta Favacho 
