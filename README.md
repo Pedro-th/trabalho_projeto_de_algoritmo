@@ -1,6 +1,16 @@
-﻿# 📊 Projeto de Algoritmos I — Métodos de Ordenação
+# 📊 Projeto de Algoritmos I — Métodos de Ordenação
 
-Este projeto contém a implementação e análise de complexidade do algoritmo de ordenação **Merge Sort**, desenvolvido em C++ utilizando Programação Orientada a Objetos (TADs) e análise estatística de operações (comparações e cópias de elementos).
+Este projeto contém a implementação e análise estatística de complexidade de diferentes algoritmos de ordenação, desenvolvido em C++ utilizando Programação Orientada a Objetos (TADs) para aferir a eficiência de operações (comparações e cópias de elementos).
+
+---
+
+## 📂 Algoritmos Implementados
+
+O projeto realiza a análise comparativa entre três abordagens clássicas de ordenação:
+
+1. **Bubble Sort** (Algoritmo iterativo simples por trocas consecutivas)
+2. **Merge Sort** (Algoritmo de divisão e conquista de alta performance)
+3. **Counting Sort** (Algoritmo de ordenação não comparativo por chaves inteiras)
 
 ---
 
