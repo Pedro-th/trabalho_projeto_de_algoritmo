@@ -2,15 +2,20 @@
 #include <vector>
 #include <cmath>
 #include <algorithm>
+#include <random>
 #include <chrono>
-#include "mergeSort.h"
-#include "countingSort.h"
-#include "bubbleSort.h"
+#include "bubbleSort/bubbleSort.h"
+#include "mergeSort/mergeSort.h"
+#include "countingSort/countingSort.h"
 
 vector<int> lista;
 int continuar = 1;
 int choice;
 int tamanho;
+int comparacao = 0;
+int troca = 0;
+random_device rd;
+mt19937 aleatorio(rd());
 
 using namespace std;
 
@@ -55,7 +60,7 @@ int main() {
                     break;
                 case 3:
                     for (int i = 1; i <= tamanho; i++) { lista.push_back(i); };
-                    random_shuffle(lista.begin(), lista.end());
+                    shuffle(lista.begin(), lista.end(), aleatorio);
                     break;
                 default: 
                     cout << "Tente novamente.\n";
@@ -75,11 +80,8 @@ int main() {
         if (choice == 1) {
             for (int x : lista) {
                 int ultimo = lista.back();
-                if (x == ultimo) {
-                    cout << x << endl;
-                } else {
-                    cout << x << ", ";
-                }
+                if (x == ultimo) { cout << x << endl; }
+                else { cout << x << ", "; }
             };
         };
         
@@ -95,15 +97,34 @@ int main() {
                  << "> ";
             cin >> choice;
 
-            if (choice == 1 || choice == 2 || choice == 3) {
-                /* TODO */
-                break;
-            }
+            switch (choice) {
+                case 1: 
+                    bubbleSort(lista, comparacao, troca);
+                    break;
+                case 2:
+                    mergeSort(lista, 0, lista.size() - 1, comparacao);
+                    break;
+                case 3:
+                    countingSort(lista);
+                    break;
+                default:
+                    cout << "Tente novamente.\n";
+                    continue;
+                };
+            break;
         };
 
 
 
         /* Número de comparações, número de trocas, tempo de execução: TODO */
+        cout << "Vetor ordenado:\n";
+        for (int x : lista) {
+            int ultimo = lista.back();
+            if (x == ultimo) { cout << x << endl; }
+            else { cout << x << ", "; }
+        };
+        cout << "Quantidade de comparações: " << comparacao << "\n";
+        cout << "Quantidade de trocas: " << troca << "\n";
 
 
 
@@ -114,7 +135,14 @@ int main() {
              << "> ";
         cin >> continuar;
 
-        if (continuar == 1) { lista.clear(); };
+        /* Reset total */
+        if (continuar == 1) { 
+            lista.clear();
+            choice = 0;
+            tamanho = 0;
+            comparacao = 0;
+            troca = 0;
+        } else { break; };
     };
 };
   
