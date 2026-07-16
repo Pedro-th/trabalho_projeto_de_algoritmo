@@ -10,11 +10,11 @@ int maximo(vector <int> &vetor) {
     return m;
 };
 
-void countingSort(vector <int> &entrada) {
-    int maior = maximo(entrada);
+void countingSort(vector <int> &vetor) {
+    int maior = maximo(vetor);
 
     vector <int> aux(maior + 1, 0);
-    vector <int> saida(entrada.size());
+    vector <int> saida(vetor.size());
 
     /* 
     Primeira iteração: 0...(n-1)
@@ -23,8 +23,8 @@ void countingSort(vector <int> &entrada) {
     O valor x no vetor de entrada incrementa na posição x do 
     vetor auxiliar, sendo na prática um histograma.
     */
-    for (int i = 0; i < entrada.size(); i++) {
-        int j = entrada[i];
+    for (int i = 0; i < vetor.size(); i++) {
+        int j = vetor[i];
         aux[j]++;
     };
 
@@ -49,11 +49,11 @@ void countingSort(vector <int> &entrada) {
     e, após colocar o elemento, diminuímos esse valor para que a
     próxima ocorrência do mesmo número fique na posição anterior.
     */
-    for (int i = entrada.size() - 1; i >= 0; i--) {
-        int j = entrada[i];
+    for (int i = vetor.size() - 1; i >= 0; i--) {
+        int j = vetor[i];
         aux[j]--;
-        saida[aux[j]] = entrada[i];
+        saida[aux[j]] = vetor[i];
     };
 
-    entrada = saida;
+    vetor = saida;
 };
