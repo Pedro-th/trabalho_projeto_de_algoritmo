@@ -1,3 +1,8 @@
+/* Corrigir erro de print no Windows */
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 #include <random>
 #include <vector>
 #include <cmath>
@@ -20,6 +25,12 @@ mt19937 aleatorio(rd());
 using namespace std;
 
 int main() {
+    /* Corrigir erro de print no Windows */
+    #ifdef _WIN32
+        SetConsoleOutputCP(CP_UTF8);
+        SetConsoleCP(CP_UTF8);
+    #endif
+
     while (continuar == 1) {
 
         /* Escolha do tamanho da lista */
