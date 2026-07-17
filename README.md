@@ -36,3 +36,8 @@ O projeto realiza a análise comparativa entre três abordagens clássicas de or
    ```bash
    git clone [https://github.com/Pedro-th/trabalho_projeto_de_algoritmo.git](https://github.com/Pedro-th/trabalho_projeto_de_algoritmo.git)
    cd trabalho_projeto_de_algoritmo
+
+2. **Compilar e executar o código:**
+   ```
+   g++ main.cpp bubbleSort/bubbleSort.cpp mergeSort/mergeSort.cpp countingSort/countingSort.cpp -o ordenação.exe
+   ./ordenação.exe
